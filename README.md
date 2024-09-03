@@ -1,79 +1,19 @@
-Manifest for Android MarshMallow / CyanogenMod 13.0
+Manifest for LOS21
 ====================================
-Project M4|L5 / Project U0|L7 / Project V1|L1II / Project Vee3|L3II
+Project Mi439
 
 ---
 
-Automatic Way:
-
-script to download manifests, sync repo  and build:
-
-    curl --create-dirs -L -o build.sh -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-13.0/build.sh
-
-To use:
-
-    source build.sh
-
----
 
 Manual Way:
 
-To initialize CyanogenMod 13.0 Repo:
+To initialize everything:
 
-    repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0 -g all,-notdefault,-darwin
+https://gist.github.com/Caio99BR/1172b69c92d8aad5d5c8ebc6ae3d3731
 
----
 
 To initialize Common Manifest for all devices:
 
-    curl --create-dirs -L -o .repo/local_manifests/common_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-13.0/common_manifest.xml
+    curl --create-dirs -L -o .repo/local_manifests/common_manifest.xml -O -L https://raw.github.com/Caio99BR/android_.repo_local_manifests/lineage-21/common_manifest.xml
 
 ---
-
-To initialize Manifest for L5/L7 devices:
-
-    curl --create-dirs -L -o .repo/local_manifests/msm7x27a_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-13.0/msm7x27a_manifest.xml
-
----
-
-To initialize Manifest for L1II/L3II devices:
-
-    curl --create-dirs -L -o .repo/local_manifests/vee3_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-13.0/vee3_manifest.xml
-
----
-
-# Never use 'L5/L7' Manifest with 'L1II/L3II' Manifest
-
----
-
-Sync the repo:
-
-    repo sync
-
----
-
-Initialize the environment:
-
-    source build/envsetup.sh
-
----
-
-To build for L5:
-
-    brunch e610
-
----
-
-To build for L7:
-
-    brunch p700
-
----
-
-To build for L1II:
-
-    TARGET_KERNEL_V1_BUILD_DEVICE=true brunch vee3
-
-To build for L3II:
-
-    brunch vee3
